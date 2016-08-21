@@ -1,3 +1,7 @@
 <p>current indexes</p>
 
-<iframe src="http://localhost:9200/_cat/indices" style="width:500px; height:500px; overflow: auto"></iframe>
+<ul>
+  <%= for el <- echo_list(@list) do %>
+    <li><%= el %></li>
+  <% end %>
+</ul>
