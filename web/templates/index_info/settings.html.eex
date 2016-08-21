@@ -1,0 +1,13 @@
+<p>index settings for <%= @name %></p>
+
+<div style="width: 49%; float: left">
+  <p>Production Settings</p>
+  <pre><%= @live %></pre>
+</div>
+
+<div style="width: 49%; float: left">
+  <p>Local Settings</p>
+  <pre><%= @local %></pre>
+</div>
+
+<div style="clear: both"></div>
