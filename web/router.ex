@@ -19,6 +19,9 @@ defmodule EsExplorer.Router do
     get "/", PageController, :index
     get "/index_info", IndexInfoController, :index
     get "/index_settings", IndexInfoController, :settings
+
+    get "/search/lite", SearchController, :lite
+    post "/search/run_search", SearchController, :run_search
   end
 
   # Other scopes may use custom stacks.

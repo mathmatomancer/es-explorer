@@ -1,0 +1,23 @@
+<h4>'Lite' Search</h4>
+
+<p>Use this search page to perform basic search queries, either of raw text or of the form attr:value, as in the examples below:</p>
+
+<ul>
+  <li>john</li>
+  <li>tweet:elasticsearch</li>
+  <li>+name:john +tweet:mary</li>
+  <li>+name:(mary john) +date:>2014-09-10 +(aggregations geo)</li>
+</ul>
+
+<%= form_for @conn, search_path(@conn, :run_search), [as: :search], fn f -> %>
+  <label for="index">Index</label>
+  <%= text_input f, :index %>
+  <br />
+  <label for="query">Query</label>
+  <%= text_input f, :query %>
+  <br />
+  <%= submit "Search" %>
+<% end %>
+
+<p>Searched <%= @index %> for <%= @query %></p>
+<%= @data %>
