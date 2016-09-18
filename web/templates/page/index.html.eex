@@ -4,6 +4,22 @@
 </div>
 
 <div class="row">
+  <%= form_for @conn, page_path(@conn, :set_cookies), [as: :page], fn f -> %>
+    <div class="col-md-5">
+      <p>Local ES Location:</p>
+      <%= text_input f, :local_endpoint, value: cookies(@conn, "local_endpoint") %>
+    </div>
+    <div class="col-md-5">
+      <p>External ES Location:</p>
+      <%= text_input f, :ext_endpoint, value: cookies(@conn, "ext_endpoint") %>
+    </div>
+    <div class="col-md-2">
+      <input type="Submit" value="Update" />
+    </div>
+  <% end %>
+</div>
+
+<div class="row">
   <div class="col-lg-6">
     <h4>Analysis</h4>
     <ul>

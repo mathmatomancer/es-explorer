@@ -17,6 +17,7 @@ defmodule EsExplorer.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    post "/set_endpoints", PageController, :set_cookies
     get "/index_info", IndexInfoController, :index
     get "/index_settings", IndexInfoController, :settings
 
